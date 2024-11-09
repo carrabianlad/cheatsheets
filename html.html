@@ -1,0 +1,321 @@
+Here's a detailed and advanced HTML cheat sheet covering elements, attributes, forms, media, accessibility, and more. This should be useful for both rapid reference and for brushing up on advanced HTML techniques. 
+
+---
+
+### **HTML Basic Structure**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+---
+
+### **Document Metadata**
+```html
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive layout -->
+    <meta name="description" content="Brief description of the page content">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Author Name">
+    <link rel="stylesheet" href="styles.css"> <!-- Link external stylesheet -->
+    <script src="script.js" defer></script> <!-- Link external JavaScript -->
+</head>
+```
+
+---
+
+### **Basic Tags**
+- **Headings**: `<h1>` to `<h6>`
+- **Paragraph**: `<p>`
+- **Line Break**: `<br>`
+- **Horizontal Line**: `<hr>`
+- **Lists**: Ordered List (`<ol>`), Unordered List (`<ul>`)
+  ```html
+  <ul>
+      <li>List item</li>
+  </ul>
+  ```
+  
+---
+
+### **Text Formatting Tags**
+- **Bold**: `<strong>` or `<b>`
+- **Italic**: `<em>` or `<i>`
+- **Underline**: `<u>`
+- **Strikethrough**: `<del>`
+- **Subscript**: `<sub>`
+- **Superscript**: `<sup>`
+  
+---
+
+### **Links and Navigation**
+```html
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">Visit Example</a>
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+```
+
+---
+
+### **Images and Media**
+```html
+<img src="image.jpg" alt="Description of image" width="200" height="100" loading="lazy">
+
+<!-- Audio -->
+<audio controls>
+    <source src="audio.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+</audio>
+
+<!-- Video -->
+<video width="320" height="240" controls poster="thumbnail.jpg">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+```
+
+---
+
+### **Tables**
+```html
+<table>
+    <caption>Table Caption</caption>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Footer 1</td>
+            <td>Footer 2</td>
+        </tr>
+    </tfoot>
+</table>
+```
+
+---
+
+### **Forms**
+```html
+<form action="/submit" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="file">Upload File:</label>
+    <input type="file" id="file" name="file">
+
+    <input type="submit" value="Submit">
+</form>
+```
+
+#### **Advanced Form Attributes**
+- **Autofocus**: `<input type="text" autofocus>`
+- **Placeholder**: `<input type="text" placeholder="Enter text">`
+- **Pattern**: `<input type="text" pattern="[A-Za-z]{3,}">`
+- **Disabled**: `<input type="text" disabled>`
+- **Readonly**: `<input type="text" readonly>`
+- **Multiple**: `<input type="file" multiple>`
+
+---
+
+### **Semantic HTML5 Tags**
+- **Sections and Structure**: `<header>`, `<footer>`, `<section>`, `<article>`, `<aside>`, `<nav>`
+- **Figure and Figcaption**:
+  ```html
+  <figure>
+      <img src="image.jpg" alt="Description">
+      <figcaption>Image Caption</figcaption>
+  </figure>
+  ```
+
+---
+
+### **HTML Entities**
+```html
+<!-- Common Entities -->
+&copy;   <!-- © Copyright -->
+&nbsp;   <!-- Non-breaking Space -->
+&reg;    <!-- ® Registered Trademark -->
+&lt;     <!-- < Less Than -->
+&gt;     <!-- > Greater Than -->
+&quot;   <!-- " Quotation Mark -->
+```
+
+---
+
+### **Comments**
+```html
+<!-- This is a comment -->
+```
+
+---
+
+### **ARIA (Accessible Rich Internet Applications)**
+- **Roles**: `role="navigation"`, `role="button"`, `role="main"`
+- **States and Properties**: `aria-hidden="true"`, `aria-label="Description"`, `aria-labelledby="id"`, `aria-describedby="id"`
+
+Example:
+```html
+<button aria-label="Close Menu">X</button>
+```
+
+---
+
+### **Interactive Elements**
+- **Details & Summary (Collapsible Content)**:
+  ```html
+  <details>
+      <summary>Click to expand</summary>
+      <p>Hidden content.</p>
+  </details>
+  ```
+  
+- **Dialog (Modal)**:
+  ```html
+  <dialog open>
+      <p>Dialog content.</p>
+      <button onclick="this.closest('dialog').close()">Close</button>
+  </dialog>
+  ```
+
+---
+
+### **Attributes**
+- **Global Attributes**: `id`, `class`, `style`, `title`, `lang`, `dir`
+- **Data Attributes**: `data-*` for custom data.
+  ```html
+  <div data-user-id="123">User Profile</div>
+  ```
+  
+---
+
+### **Responsive Design**
+- **Viewport**:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  ```
+- **Picture for Responsive Images**:
+  ```html
+  <picture>
+      <source srcset="image-large.jpg" media="(min-width: 800px)">
+      <source srcset="image-small.jpg" media="(max-width: 799px)">
+      <img src="image.jpg" alt="Responsive image">
+  </picture>
+  ```
+
+---
+
+### **Custom Elements (Web Components)**
+```html
+<template id="my-element">
+    <style>
+        p { color: blue; }
+    </style>
+    <p>Hello, Custom Element!</p>
+</template>
+
+<script>
+    class MyElement extends HTMLElement {
+        constructor() {
+            super();
+            const template = document.getElementById('my-element').content;
+            this.attachShadow({ mode: 'open' }).appendChild(template.cloneNode(true));
+        }
+    }
+    customElements.define('my-element', MyElement);
+</script>
+
+<my-element></my-element>
+```
+
+---
+
+### **Linking to External Resources**
+```html
+<!-- Stylesheets -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- JavaScript -->
+<script src="script.js" defer></script>
+
+<!-- Icons -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+```
+
+---
+
+### **Common MIME Types**
+- **HTML**: `text/html`
+- **CSS**: `text/css`
+- **JavaScript**: `application/javascript`
+- **JSON**: `application/json`
+- **XML**: `application/xml`
+- **JPEG**: `image/jpeg`
+- **PNG**: `image/png`
+
+---
+
+### **Example of Accessibility-Friendly Page**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Page</title>
+</head>
+<body>
+
+    <header>
+        <h1>Accessible HTML Example</h1>
+    </header>
+
+    <main role="main">
+        <section>
+            <h2>Introduction</h2>
+            <p>Welcome to our website.</p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2023 Example Co.</p>
+    </footer>
+
+</body>
+</html>
+```
+
+---
+
+This comprehensive HTML cheat sheet should cover most advanced HTML use cases and patterns for web development.
